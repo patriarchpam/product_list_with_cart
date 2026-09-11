@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Product list with cart</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <main class="product-section">
+      <h1 class="page-title">Desserts</h1>
+      <div class="product-grid" id="product-grid">
+        <!-- Products dynamically injected here -->
+      </div>
+    </main>
+
+    <aside class="cart-section" id="cart-section">
+      <h2 class="cart-title">Your Cart (<span id="cart-count">0</span>)</h2>
+      
+      <!-- Empty Cart State -->
+      <div id="cart-empty" class="cart-empty">
+        <img src="./assets/images/illustration-empty-cart.svg" alt="Empty Cart">
+        <p>Your added items will appear here</p>
+      </div>
+
+      <!-- Populated Cart State -->
+      <div id="cart-populated" class="cart-populated hidden">
+        <div class="cart-items" id="cart-items">
+          <!-- Cart items dynamically injected here -->
+        </div>
+        <div class="cart-total-container">
+          <span class="cart-total-label">Order Total</span>
+          <span class="cart-total-price" id="cart-total-price">$0.00</span>
+        </div>
+        <div class="carbon-neutral">
+          <img src="./assets/images/icon-carbon-neutral.svg" alt="Tree icon">
+          <p>This is a <strong>carbon-neutral</strong> delivery</p>
+        </div>
+        <button class="btn confirm-order-btn" id="confirm-order-btn">Confirm Order</button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Order Confirmation Modal -->
+  <div id="order-modal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <img src="./assets/images/icon-order-confirmed.svg" alt="Checkmark icon" class="modal-icon">
+      <h2>Order Confirmed</h2>
+      <p class="modal-subtitle">We hope you enjoy your food!</p>
+      
+      <div class="order-summary-container">
+        <div class="order-items" id="order-items">
+           <!-- Order items dynamically injected here -->
+        </div>
+        <div class="order-total-container">
+          <span class="cart-total-label">Order Total</span>
+          <span class="cart-total-price" id="modal-total-price">$0.00</span>
+        </div>
+      </div>
+      
+      <button class="btn start-new-order-btn" id="start-new-order-btn">Start New Order</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
